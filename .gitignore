@@ -1,0 +1,50 @@
+# --- Secrets / env files ---
+**/.env
+**/.env.*
+!**/.env.example
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.pyd
+*.pyo
+
+# Virtual envs
+.venv/
+venv/
+env/
+
+# Tool caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.pytype/
+
+# Logs
+*.log
+
+# --- Node / Expo / React Native ---
+node_modules/
+
+# Expo
+.expo/
+.expo-shared/
+
+# Metro / bundler caches
+*.hbc
+*.map
+
+# Build outputs
+build/
+dist/
+
+# React Native (if native folders are added)
+ios/Pods/
+ios/build/
+android/.gradle/
+android/app/build/
+
+# --- OS ---
+.DS_Store
+Thumbs.db
+Desktop.ini
