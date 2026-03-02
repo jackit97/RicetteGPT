@@ -4,6 +4,7 @@
     "slug": "ricette-gpt",
     "version": "1.0.0",
     "scheme": "ricettegpt",
+    "icon": "./assets/icon.png",
     "platforms": [
       "ios",
       "android",
@@ -13,6 +14,13 @@
       "expoPublicApiUrl": "https://ricettegpt-backend.onrender.com",
       "eas": {
         "projectId": "80a450f9-164e-4308-8296-eda801dcd84c"
+      }
+    },
+    "android": {
+      "package": "com.giacomocavallini1.ricettegpt",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#FF5A5F"
       }
     }
   }
