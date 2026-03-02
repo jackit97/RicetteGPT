@@ -4,9 +4,16 @@
     "slug": "ricette-gpt",
     "version": "1.0.0",
     "scheme": "ricettegpt",
-    "platforms": ["ios", "android", "web"],
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
     "extra": {
-      "expoPublicApiUrl": "https://ricettegpt-backend.onrender.com"
+      "expoPublicApiUrl": "https://ricettegpt-backend.onrender.com",
+      "eas": {
+        "projectId": "80a450f9-164e-4308-8296-eda801dcd84c"
+      }
     }
   }
 }
