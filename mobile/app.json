@@ -22,6 +22,12 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FF5A5F"
       }
+    },
+    "ios": {
+      "bundleIdentifier": "com.giacomocavallini1.ricettegpt",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      }
     }
   }
 }
