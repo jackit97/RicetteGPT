@@ -25,6 +25,7 @@ from src.services.user_store import (
     list_recipes_for_user,
     delete_recipe_for_user,
 )
+from src.services.db import auto_migrate_if_enabled
 
 load_dotenv()
 
@@ -40,6 +41,15 @@ app.add_middleware(
 )
 
 openai_service = OpenAIService()
+
+
+@app.on_event("startup")
+def _startup_db_migrate():
+    try:
+        auto_migrate_if_enabled()
+    except Exception as e:
+        # Avoid crashing the whole service if migration fails.
+        print("[DB] auto migrate failed:", repr(e))
 
 
 @app.get("/")
