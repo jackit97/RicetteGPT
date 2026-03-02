@@ -25,6 +25,22 @@ services:
           name: ricettegpt-db
           property: connectionString
 
+  - type: web
+    name: ricettegpt-dbweb
+    env: docker
+    rootDir: dbweb
+    plan: free
+    autoDeploy: true
+    envVars:
+      - key: PGWEB_DATABASE_URL
+        fromDatabase:
+          name: ricettegpt-db
+          property: connectionString
+      - key: PGWEB_AUTH_USER
+        value: admin
+      - key: PGWEB_AUTH_PASS
+        generateValue: true
+
 databases:
   - name: ricettegpt-db
     plan: free
