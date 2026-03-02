@@ -6,7 +6,7 @@
     "scheme": "ricettegpt",
     "platforms": ["ios", "android", "web"],
     "extra": {
-      "expoPublicApiUrl": "http://192.168.1.61:3000"
+      "expoPublicApiUrl": "https://ricettegpt-backend.onrender.com"
     }
   }
 }
