@@ -75,13 +75,18 @@ export default function CameraScreen({ navigation }) {
       // Dynamic import so app doesn't fail if package not present during web
       const ImagePicker = await import('expo-image-picker');
       const perm = await ImagePicker.requestMediaLibraryPermissionsAsync();
-      if (perm.status !== 'granted') {
+      if (!perm.granted) {
         Alert.alert('Permesso richiesto', 'Serve permesso per accedere alla galleria');
         return;
       }
       const result = await ImagePicker.launchImageLibraryAsync({ mediaTypes: ImagePicker.MediaTypeOptions.Images, quality: 0.8 });
-      if (result.cancelled) return;
-      const uri = result.assets ? result.assets[0].uri : result.uri;
+      const wasCancelled = result.canceled ?? result.cancelled;
+      if (wasCancelled) return;
+      const uri = result.assets?.[0]?.uri ?? result.uri;
+      if (!uri) {
+        Alert.alert('Errore', 'Nessuna immagine selezionata');
+        return;
+      }
       console.log('[Camera] picked from gallery uri =', uri);
       const data = await analyzeImageAsync(uri);
       if (data && data.recipes) {
