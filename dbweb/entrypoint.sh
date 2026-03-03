@@ -20,4 +20,3 @@ exec pgweb \
   --auth-user "$PGWEB_AUTH_USER" \
   --auth-pass "$PGWEB_AUTH_PASS" \
   --skip-open \
-  --readonly
